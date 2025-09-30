@@ -3,13 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-<<<<<<< HEAD
     "start": "node app.js",
     "dev": "nodemon app.js"
-=======
-    "start": "node server.js",
-    "dev": "nodemon server.js"
->>>>>>> 911143ed954765d9b7d9a2b5e6d06fb734b91731
   },
   "keywords": [],
   "author": "",
@@ -22,12 +17,8 @@
     "express": "^5.1.0",
     "leetcode-query": "^2.0.1",
     "mongoose": "^8.16.0",
-<<<<<<< HEAD
     "puppeteer": "^24.17.1",
     "redis": "^5.8.2"
-=======
-    "puppeteer": "^24.17.1"
->>>>>>> 911143ed954765d9b7d9a2b5e6d06fb734b91731
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
