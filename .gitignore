@@ -8,10 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-<<<<<<< HEAD
 .env
-=======
->>>>>>> 911143ed954765d9b7d9a2b5e6d06fb734b91731
 dist
 dist-ssr
 *.local
