@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const { LeetCode } = require("leetcode-query");
 const redisClient = require('../config/redisClient'); 
 
@@ -19,11 +20,27 @@ const getUserData = async (req, res) => {
     }
 
     //no cache then direct api
+=======
+const axios = require("axios");
+const { LeetCode } = require("leetcode-query");
+
+const getUserData = async (req, res) => {
+  try {
+    const username = req.params.userId; 
+    if (!username) {
+      return res.status(400).json({ error: "Username is required" });
+    }
+
+>>>>>>> 911143ed954765d9b7d9a2b5e6d06fb734b91731
     const leetcode = new LeetCode();
     const user = await leetcode.user(username);
 
     if (!user.matchedUser) {
+<<<<<<< HEAD
       return res.status(404).json({ error: "User not found" });
+=======
+      return res.status(404).json({ error: "User not found" }); 
+>>>>>>> 911143ed954765d9b7d9a2b5e6d06fb734b91731
     }
 
     const userProfile = {
@@ -63,6 +80,7 @@ const getUserData = async (req, res) => {
       badges,
     };
 
+<<<<<<< HEAD
     //Store the new data in Redis with an expiration time
     await redisClient.setEx(cacheKey, CACHE_EXPIRATION_SECONDS, JSON.stringify(leetData));
 
@@ -79,8 +97,20 @@ const getUserData = async (req, res) => {
     return res.status(500).json({
       status: 'FAILED',
       message: error.message,
+=======
+    res.send(leetData);
+
+  } catch (error) {
+    return res.status(500).json({ 
+        status:'FAILED',
+        message:error.message,
+>>>>>>> 911143ed954765d9b7d9a2b5e6d06fb734b91731
     });
   }
 };
 
+<<<<<<< HEAD
 module.exports = { getUserData };
+=======
+module.exports = {getUserData};
+>>>>>>> 911143ed954765d9b7d9a2b5e6d06fb734b91731
